@@ -616,6 +616,20 @@
           "cssFilePath": "plasmic/infinite_spaces/PlasmicIssSiteNavigation.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "C14Vt8wea5e-",
+          "name": "FindUs",
+          "type": "managed",
+          "projectId": "swQEFyb2rqeDN7eGYC4o6Y",
+          "renderModuleFilePath": "plasmic/infinite_spaces/PlasmicFindUs.tsx",
+          "importSpec": {
+            "modulePath": "../pages/find-us.tsx"
+          },
+          "cssFilePath": "plasmic/infinite_spaces/PlasmicFindUs.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/find-us"
         }
       ],
       "icons": [
@@ -685,6 +699,11 @@
           "id": "yw6im0UAqTQP",
           "name": "hamburger.svg",
           "filePath": "../public/plasmic/infinite_spaces/images/hamburgersvg.svg"
+        },
+        {
+          "id": "V0WR7I_MZfEX",
+          "name": "parking_map.jpg",
+          "filePath": "../public/plasmic/infinite_spaces/images/parkingMapjpg.jpg"
         }
       ],
       "indirect": false,
