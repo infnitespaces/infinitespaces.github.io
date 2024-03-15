@@ -60,7 +60,6 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import IssSiteNavigation from "../../IssSiteNavigation"; // plasmic-import: OLi-exGuSXba/component
-import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -84,9 +83,7 @@ export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   issSiteNavigation?: Flex__<typeof IssSiteNavigation>;
   section?: Flex__<"section">;
-  iframe?: Flex__<typeof Iframe>;
   embedHtml?: Flex__<typeof Embed>;
-  freeBox?: Flex__<"div">;
 };
 
 export interface DefaultHomepageProps {}
@@ -161,16 +158,6 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.section}
             className={classNames(projectcss.all, sty.section)}
           >
-            <Iframe
-              data-plasmic-name={"iframe"}
-              data-plasmic-override={overrides.iframe}
-              className={classNames("__wab_instance", sty.iframe)}
-              preview={true}
-              src={
-                "https://my.spline.design/untitled-94acee2cc9f0101195418f2ba7f0d9a6/"
-              }
-            />
-
             <Embed
               data-plasmic-name={"embedHtml"}
               data-plasmic-override={overrides.embedHtml}
@@ -178,12 +165,6 @@ function PlasmicHomepage__RenderFunc(props: {
               code={
                 '<iframe src=\'https://my.spline.design/infintespaces01-7c652b300c6bd3afec80e6efa4578e85/\'\r\n  width="100%"\r\n  height="100%"\r\n  frameborder="0"\r\n  style="border: none; border-radius: 4px;"\r\n  scrolling="no"\r\n  allowfullscreen=""\r\n  aria-hidden="false"\r\n  tabindex="0"\r\n></iframe>'
               }
-            />
-
-            <div
-              data-plasmic-name={"freeBox"}
-              data-plasmic-override={overrides.freeBox}
-              className={classNames(projectcss.all, sty.freeBox)}
             />
           </section>
         </Stack__>
@@ -193,19 +174,10 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "issSiteNavigation",
-    "section",
-    "iframe",
-    "embedHtml",
-    "freeBox"
-  ],
+  root: ["root", "issSiteNavigation", "section", "embedHtml"],
   issSiteNavigation: ["issSiteNavigation"],
-  section: ["section", "iframe", "embedHtml", "freeBox"],
-  iframe: ["iframe"],
-  embedHtml: ["embedHtml"],
-  freeBox: ["freeBox"]
+  section: ["section", "embedHtml"],
+  embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -214,9 +186,7 @@ type NodeDefaultElementType = {
   root: "div";
   issSiteNavigation: typeof IssSiteNavigation;
   section: "section";
-  iframe: typeof Iframe;
   embedHtml: typeof Embed;
-  freeBox: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -281,9 +251,7 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     issSiteNavigation: makeNodeComponent("issSiteNavigation"),
     section: makeNodeComponent("section"),
-    iframe: makeNodeComponent("iframe"),
     embedHtml: makeNodeComponent("embedHtml"),
-    freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
